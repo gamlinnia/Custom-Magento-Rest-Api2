@@ -14,6 +14,10 @@
                 <title>Testing My Rest API</title>
                 <sort_order>10</sort_order>
                 <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                    </admin>
                     <guest>
                         <create>1</create>
                     </guest>
