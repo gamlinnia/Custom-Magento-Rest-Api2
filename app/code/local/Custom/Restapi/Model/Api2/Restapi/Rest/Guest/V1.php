@@ -2,11 +2,6 @@
 class Custom_Restapi_Model_Api2_Restapi_Rest_Guest_V1 extends Custom_Restapi_Model_Api2_Restapi
 {
 
-    /**
-     * Create a customer
-     * @return array
-     */
-
     public function _create(array $data) {
 
         $firstName = $data['firstname'];
@@ -23,6 +18,34 @@ class Custom_Restapi_Model_Api2_Restapi_Rest_Guest_V1 extends Custom_Restapi_Mod
         $customer->save();
 
         return $this->_getLocation($customer);
+    }
+
+    public function _retrieve() {
+        //        in api2.xml <route>/customer/:id</route>
+        $id = (int)$this->getRequest()->getParam('id');
+        return json_encode(array("testing" => $id));
+    }
+
+    public function _retrieveCollection() {
+        return json_encode(array(
+            'result' =>array("testing" => "Success", "good" => "no good")
+        ));
+    }
+
+    public function _update() {
+
+    }
+
+    public function _multiUpdate() {
+
+    }
+
+    public function _delete() {
+
+    }
+
+    public function _multiDelete() {
+
     }
 
 }
